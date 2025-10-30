@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.tabs label {
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #2a5298;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s ease;
+}
+
+.tabs label:hover {
+    border-bottom: 2px solid #2a5298;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+#login:checked ~ .content .login-form,
+#register:checked ~ .content .register-form {
+    display: block;
+}
+
+#login:checked ~ .tabs label[for="login"],
+#register:checked ~ .tabs label[for="register"] {
+    border-bottom: 2px solid #2a5298;
+}
+
+.content .login-form,
+.content .register-form {
+    display: none;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #2a5298;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2a5298;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #1e3c72;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    z-index: 1000;
+}
+
+.popup p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #2a5298;
+}
+
+.popup .button {
+    width: auto;
+    padding: 10px 20px;
+}
+
+
+

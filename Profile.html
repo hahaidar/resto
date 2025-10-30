@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CFT PROFILE</title>
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <section class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="#" title="Logo">
+                    <img src="images/CFT Resto logo.png" alt="Restaurant Logo" class="img-responsive">
+                </a>
+            </div>
+
+            <div class="menu text-right">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                  
+                    <li>
+                        <a href="LOKASI.html">Lokasi</a>
+                    </li>
+                    <li>
+                        <a href="tentang kami.html">Tentang Kami</a>
+                    </li>
+                    <li>
+                        <a href="Profile.html">profil</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </section>
+    <div class="profile-container">
+        <div class="profile-header">
+            <h1>Profile</h1>
+        </div>
+        
+        <div class="profile-content">
+            <div class="profile-image-container">
+                <div class="profile-image">
+                    <img id="profilePic" src="images/profile.png" alt="Profile Picture">
+                    <label for="uploadPic" class="upload-label">
+                        <input type="file" id="uploadPic" accept="image/*">
+                        <span class="upload-icon">📷</span>
+                    </label>
+                </div>
+            </div>
+            <div class="profile-info">
+                <div class="profile-field">
+                    <label for="name">Name:</label>
+                    <div class="input-container">
+                        <input type="text" id="name" placeholder="Nama">
+                    </div>
+                </div>
+                <div class="profile-field">
+                    <label for="username">Username:</label>
+                    <div class="input-container">
+                        <input type="text" id="username" placeholder="username">
+                    </div>
+                </div>
+                <div class="profile-field">
+                    <label for="address">Alamat:</label>
+                    <div class="input-container">
+                        <input type="text" id="address" placeholder="Alamat">
+                    </div>
+                </div>
+                <div class="profile-field">
+                    <label for="whatsapp">telephone/WhatsApp:</label>
+                    <div class="input-container">
+                        <input type="text" id="whatsapp" placeholder="Telephone/Whatsapp">
+                    </div>
+                </div>
+                <div class="buttons-container">
+                    <button class="button save-button" onclick="logout()">logout</button>
+                    <button class="button back-button" onclick="saveProfile()">Simpan</button>
+                    <button class="button kembali-button" onclick="kembali()">Kembali</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup" class="popup">
+        <p>Anda telah log out</p>
+        <button onclick="closePopup()" class="button">OK</button>
+    </div>
+
+    <div id="popup-simpan" class="popup">
+        <p>Profil tersimpan</p>
+        <button onclick="closePopupSimpan()" class="button">OK</button>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const params = new URLSearchParams(window.location.search);
+            const username = params.get('username');
+            if (username) {
+                document.getElementById('username').value = username;
+            }
+        };
+
+        function logout() {
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function saveProfile() {
+            document.getElementById('popup-simpan').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        function closePopupSimpan() {
+            document.getElementById('popup-simpan').style.display = 'none';
+        }
+
+        function kembali() {
+            window.location.href = 'index.html';
+        }
+
+        function goBack() {
+            window.location.href = 'Profile.html';
+        }
+    </script>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2>About us</h2>
+                <p>CFT Restaurant adalah destinasi kuliner yang menawarkan pengalaman makan dan minum yang unik di Salatiga, Indonesia. visi dan misi kami untuk menyediakan ruang bagi para talenta kuliner untuk berkreasi tanpa batas.</p>
+            </div>
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="LOKASI.html">Lokasi Kami</a></li>
+                    <li><a href="tentang kami.html">tentang Kami</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h2>Hubungi kami</h2>
+                <p><i class="fas fa-map-marker-alt"></i> Salatiga, Salatiga, Indonesia</p>
+                <p><i class="fas fa-phone"></i> +67 2023051</p>
+                <p><i class="fas fa-envelope"></i> CFT_Resto@gmail.com</p>
+            </div>
+            <div class="footer-section social">
+                <h2>Follow Us</h2>
+                <div class="social-icons">
+                    <a target="_blank"><img src="images/facebook.png" alt="Facebook"></a>
+                    <a target="_blank"><img src="images/X1.png" alt="Twitter"></a>
+                    <a target="_blank"><img src="images/ig.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 CFT Restaurant | Designed by kelompok 10
+        </div>
+    </footer>
+</body>
+</html>
